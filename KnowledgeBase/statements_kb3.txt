@@ -1,0 +1,6 @@
+fact: (hero a)
+fact: (person a)
+
+fact: (goodman a)
+
+rule: ((hero ?y) (person ?y)) -> (goodman ?y)

@@ -1,0 +1,25 @@
+fact: (attacked Ai Nosliw)
+fact: (diamonds Loot)
+fact: (possesses Ai Loot)
+fact: (needs Sarorah Loot)
+fact: (hero Ai)
+
+fact: (inst Sarorah Sorceress)
+fact: (isa Sorceress Wizard)
+
+fact: (inst Nosliw Dragon)
+
+
+rule: ((inst ?x ?y) (isa ?y ?z)) -> (inst ?x ?z)
+rule: ((isa ?x ?y) (isa ?y ?z)) -> (isa ?x ?z)
+
+rule: ((dead Nosliw)) -> (safe HappyDale)
+rule: ((attacked ?a ?d) (defeatable ?d)) -> (dead ?d)
+
+rule: ((wielding ?a ?s) (strong ?a) (inst ?d Dragon)) -> (defeatable ?d)
+rule: ((magicCastUpon ?a)) -> (strong ?a)
+
+rule: ((inst ?w Wizard) (gives ?a ?w ?d) (diamonds ?d)) -> (magicCastUpon ?a)
+rule: ((hero ?a)) -> (wielding ?a Weapon)
+
+rule: ((possesses ?a ?it) (needs ?p ?it)) -> (gives ?a ?p ?it)
