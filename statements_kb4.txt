@@ -1,0 +1,10 @@
+fact: (motherof ada bing)
+fact: (motherof bing chen)
+fact: (motherof dolores chen)
+fact: (sisters ada eva)
+fact: (grandmotherof ada felix)
+fact: (motherof greta felix)
+
+rule: ((motherof ?x ?y)) -> (parentof ?x ?y)
+rule: ((parentof ?x ?y) (sisters ?x ?z)) -> (auntof ?z ?y)
+rule: ((parentof ?x ?y) (motherof ?z ?x)) -> (grandmotherof ?z ?y)

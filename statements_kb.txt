@@ -1,0 +1,42 @@
+fact: (isa cube block)
+fact: (isa pyramid block)
+fact: (isa sphere block)
+
+fact: (isa box container)
+
+fact: (inst bigbox box)
+fact: (size bigbox big)
+fact: (color bigbox red)
+
+fact: (inst littlebox box)
+fact: (size littlebox small)
+fact: (color littlebox blue)
+
+fact: (inst pyramid1 pyramid)
+fact: (size pyramid1 small)
+fact: (color pyramid1 blue)
+
+fact: (inst pyramid2 pyramid)
+fact: (size pyramid2 small)
+fact: (color pyramid2 green)
+
+fact: (inst pyramid3 pyramid)
+fact: (size pyramid3 big)
+fact: (color pyramid3 red)
+
+fact: (inst pyramid4 pyramid)
+fact: (size pyramid4 big)
+fact: (color pyramid4 red)
+
+fact: (inst cube1 cube)
+fact: (inst cube2 cube)
+fact: (inst cube3 cube)
+fact: (inst cube4 cube)
+
+fact: (inst sphere1 sphere)
+
+rule: ((inst ?x ?y) (isa ?y ?z)) -> (inst ?x ?z)
+rule: ((inst ?x cube)) -> (flat ?x)
+rule: ((on ?x ?y) (bigger ?x ?y)) -> (covered ?y)
+rule: ((married ?x ?y) (love ?x ?y)) -> (happy ?x)
+rule: ((married ?x ?y) (love ?x ?y)) -> (happy ?y)
